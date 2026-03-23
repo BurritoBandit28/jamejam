@@ -1,0 +1,18 @@
+// this file will be updated
+
+Clone Repo
+
+cmake -G Ninja
+
+(compile)
+ninja
+
+open in CLion (or preferred editor)
+
+Clion may say:
+It was created with incompatible generator 'Ninja'
+
+Please either delete it manually or select another generation directory
+
+if so, remove CmakeCache.txt and reload the project. This fixes it
+

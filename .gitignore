@@ -6,3 +6,5 @@ cmake_install.cmake
 Testing/
 *.exe
 .cmake
+CMakeCache.txt
+jamejam

@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "resource_location.h"
 
 int main() {
