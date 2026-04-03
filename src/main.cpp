@@ -7,6 +7,7 @@
 
 static SDL_Window *window = NULL;
 static SDL_Renderer *renderer = NULL;
+static SDL_AudioStream *stream = NULL;
 
 int main() {
     ResourceLocation rl1 = ResourceLocation("game", "test");
@@ -16,8 +17,9 @@ int main() {
     std::cout << rl1.toString() << " " << rl2.toString() << std::endl;
 
     // basic sdl setup
+    SDL_AudioSpec spec;
 
-    if (!SDL_Init(SDL_INIT_VIDEO)) {
+    if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO)) {
         printf("SDL_Init failed: %s\n", SDL_GetError());
     }
 
