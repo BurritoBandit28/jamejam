@@ -6,5 +6,7 @@ cmake_install.cmake
 Testing/
 *.exe
 .cmake
+include/*
 CMakeCache.txt
 jamejam
+/compile_commands.json

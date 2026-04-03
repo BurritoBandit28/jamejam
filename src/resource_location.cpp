@@ -23,7 +23,7 @@ std::string ResourceLocation::toString() {
 }
 
 void ResourceLocation::parse(std::string value) {
-    std::vector<std::string> values = split(value, ":");
+    const std::vector<std::string> values = split(value, ":");
     this->setNamespace(values[0]);
     this->setPath(values[1]);
 }

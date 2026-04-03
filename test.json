@@ -1,0 +1,32 @@
+{
+    "levelname" : "Level 1",
+    "description" : "idk bro",
+    "key" : {
+        "#": "game:ground_tile",
+        "w": "game:water_tile",
+        "t": "addon:lava",
+        "x": "game:air"
+    },
+    "tile_layers" : {
+        "forground": {
+            "resolution": 32,
+            "gridx": 20,
+            "gridy": 40,
+            "paralax_modifier": 0.0,
+            "tiles": [
+                "####################xxxxxxxx###################t",
+                "####################wwwwwwww###############ttttt"
+            ]
+        },
+        "background": {
+            "resolution": 64,
+            "gridx": 10,
+            "gridy": 20,
+            "paralax_modifier": 3.2,
+            "tiles": [
+                "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+        }
+    }
+}
