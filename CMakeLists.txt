@@ -12,7 +12,8 @@ add_executable(jamejam src/main.cpp
         src/resource_location.cpp
         src/serializable_field.h
         src/util.h
-        src/serializable_field.cpp)
+        src/serializable_field.cpp
+)
 
 
-target_link_libraries(jamejam SDL3)
+target_link_libraries(jamejam SDL3 SDL3_ttf SDL3_image)
