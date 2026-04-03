@@ -36,7 +36,7 @@ int main() {
 
     while (running) {
         while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_EVENT_QUIT || (e.type == SDL_EVENT_KEY_DOWN && e.key.key == SDL_SCANCODE_ESCAPE)) {
+            if (e.type == SDL_EVENT_QUIT || (e.type == SDL_EVENT_KEY_DOWN && e.key.scancode == SDL_SCANCODE_ESCAPE)) {
                 running = false;
             }
         }
@@ -48,5 +48,5 @@ int main() {
     SDL_DestroyWindow(window);
     SDL_Quit();
 
-    return 0;
+    return SDL_APP_SUCCESS;
 }
