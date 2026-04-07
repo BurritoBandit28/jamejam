@@ -3,7 +3,7 @@
 #include <iostream>
 #include <SDL3/SDL_main.h>
 #include <SDL3/SDL.h>
-#include "src/resource_location.h"
+#include "resource_location.h"
 #include <GL/glew.h>
 #ifdef _WIN32
     #include <windows.h>
