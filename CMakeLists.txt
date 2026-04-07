@@ -7,7 +7,7 @@ project(jamejam)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(jamejam src/main.cpp
+add_executable(jamejam main.cpp
         src/resource_location.h
         src/resource_location.cpp
         src/serializable_field.h
@@ -19,4 +19,4 @@ add_executable(jamejam src/main.cpp
 )
 
 
-target_link_libraries(jamejam SDL3 SDL3_ttf SDL3_image)
+target_link_libraries(jamejam SDL3 SDL3_ttf SDL3_image glew32)

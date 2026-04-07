@@ -3,7 +3,14 @@
 #include <iostream>
 #include <SDL3/SDL_main.h>
 #include <SDL3/SDL.h>
-#include "resource_location.h"
+#include "src/resource_location.h"
+#include <GL/glew.h>
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+#include <GL/glu.h>
+
+
 
 static SDL_Window *window = NULL;
 static SDL_Renderer *renderer = NULL;
@@ -11,13 +18,7 @@ static SDL_AudioStream *stream = NULL;
 static Uint8 *wav_data = NULL;
 static Uint32 wav_data_len = 0;
 
-int main() {
-    ResourceLocation rl1 = ResourceLocation("base", "test");
-    ResourceLocation rl2 = ResourceLocation::empty();
-    rl2.parse("base:music/menu");
-
-    std::cout << rl1.toString() << " " << rl2.toString() << std::endl;
-
+int loadSDL() {
     // basic sdl setup
     SDL_AudioSpec spec;
 
@@ -25,7 +26,7 @@ int main() {
         printf("SDL_Init failed: %s\n", SDL_GetError());
     }
 
-    if (!SDL_CreateWindowAndRenderer("Game Window (WIP TEST BUILD)", 640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_VULKAN, &window, &renderer)) {
+    if (!SDL_CreateWindowAndRenderer("Game Window (WIP TEST BUILD)", 640, 480, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL, &window, &renderer)) {
         SDL_Log("Couldn't create window/renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
@@ -47,6 +48,8 @@ int main() {
     }
 
     SDL_ResumeAudioStreamDevice(stream);
+
+
 
     bool running = true;
 
@@ -74,3 +77,15 @@ int main() {
     SDL_free(wav_data);
     return SDL_APP_SUCCESS;
 }
+
+int main() {
+    ResourceLocation rl1 = ResourceLocation("base", "test");
+    ResourceLocation rl2 = ResourceLocation::empty();
+    rl2.parse("base:music/menu");
+
+    std::cout << rl1.toString() << " " << rl2.toString() << std::endl;
+
+   return loadSDL();
+}
+
+
