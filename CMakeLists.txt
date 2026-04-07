@@ -16,7 +16,8 @@ add_executable(jamejam src/main.cpp
         src/audio_manager.h
         src/audio_stream.h
         src/audio_stream.cpp
+        src/main.cpp
 )
 
 
-target_link_libraries(jamejam SDL3 SDL3_ttf SDL3_image glew32)
+target_link_libraries(jamejam SDL3 SDL3_ttf SDL3_image glew32 opengl32)
