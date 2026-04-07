@@ -13,6 +13,9 @@ add_executable(jamejam src/main.cpp
         src/serializable_field.h
         src/util.h
         src/serializable_field.cpp
+        src/audio_manager.h
+        src/audio_stream.h
+        src/audio_stream.cpp
 )
 
 
